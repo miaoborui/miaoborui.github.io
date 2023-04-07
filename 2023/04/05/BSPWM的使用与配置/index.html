@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Archives: 2023 |  MiaoBorui&#39;blog</title>
+      <title>bspwm config |  MiaoBorui&#39;blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,94 +54,191 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-BSPWM的使用与配置"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">2023</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2023" class="archive-year">2023</a>
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  bspwm config
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/04/05/BSPWM%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time datetime="2023-04-05T11:55:32.000Z" itemprop="datePublished">2023-04-05</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">639</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">2 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/04/05/p10k-config/" class="archive-article-date">
-  <time datetime="2023-04-05T13:01:32.000Z" itemprop="datePublished">04/05</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/04/05/p10k-config/"
-    >p10k config</a> 
-</h2>
- 
+    <div class="tocbot"></div>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/04/05/hello-world/" class="archive-article-date">
-  <time datetime="2023-04-05T12:05:50.770Z" itemprop="datePublished">04/05</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/04/05/hello-world/"
-    >Hello World</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/04/05/BSPWM%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  <time datetime="2023-04-05T11:55:32.000Z" itemprop="datePublished">04/05</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/04/05/BSPWM%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/"
-    >bspwm config</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
-      
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="我为什么用窗口管理器——BSPWM"><a href="#我为什么用窗口管理器——BSPWM" class="headerlink" title="我为什么用窗口管理器——BSPWM"></a>我为什么用窗口管理器——BSPWM</h2><p>这篇文章中，我会介绍平铺式窗口管理器<img src="https://cdn.nlark.com/yuque/0/2023/png/34937607/1680866605949-7a5e2157-fd59-4b49-a256-780bdd9eef5e.png#averageHue=%231f232b&clientId=ua3dd312d-9df4-4&from=ui&id=u5acfc0e0&name=2023-04-07_19-22.png&originHeight=38&originWidth=148&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1898&status=done&style=none&taskId=ufb29ac5a-2a1a-4876-92d5-3e1d5ce2dbf&title=" alt="2023-04-07_19-22.png"></p>
+<p>平铺窗口管理器有许多：</p>
+<ol>
+<li>有极简主义的dwm</li>
+<li>也有十分好用的i3wm</li>
+<li>有基于wayland的sway</li>
+<li>有动画丝滑的hyprland</li>
+<li>有我正在使用的bspwm</li>
+</ol>
+<p>介绍了这么多那什么是平铺式窗口管理器呢？<br>在Linux的其他桌面中，最重要的就是窗口了，而平铺式窗口管理器则是将窗口按一定规则平铺摆放<img src="https://cdn.nlark.com/yuque/0/2023/png/34937607/1680866933526-11f1be32-7a3e-456d-823e-1c9b7555aa59.png#averageHue=%23262b34&clientId=ua3dd312d-9df4-4&from=ui&id=u246fa400&name=2023-04-07_19-28.png&originHeight=986&originWidth=1896&originalType=binary&ratio=1&rotation=0&showTitle=false&size=268989&status=done&style=none&taskId=ua5737b50-0f9e-410e-a6cc-126931bde3a&title=" alt="2023-04-07_19-28.png"></p>
+<p>好的，那么开始介绍我为什么使用bspwm（大佬请略过）:</p>
+<ol>
+<li>他有较完整的配置方案</li>
+<li>他的配置好读懂</li>
+<li>他没有想dwm一样配置要<code>sudo make clean install</code></li>
+</ol>
+<p>…..（此处省略114514个字）</p>
+<h2 id="怎么安装bspwm？"><a href="#怎么安装bspwm？" class="headerlink" title="怎么安装bspwm？"></a>怎么安装bspwm？</h2><p>bspwm安装很简单在arch系的Linux中只需要<code>sudo pacman -S bspwm feh picom polybar rofi</code><br>其他的后续补充</p>
+<h3 id="那么为什么安装这些软件"><a href="#那么为什么安装这些软件" class="headerlink" title="那么为什么安装这些软件"></a>那么为什么安装这些软件</h3><h4 id="bspwm："><a href="#bspwm：" class="headerlink" title="bspwm："></a>bspwm：</h4><p>一个窗口管理器</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="feh："><a href="#feh：" class="headerlink" title="feh："></a>feh：</h4><p>你的壁纸</p>
+<h4 id="picom："><a href="#picom：" class="headerlink" title="picom："></a>picom：</h4><p>动画效果（合成器）</p>
+<h4 id="polybar："><a href="#polybar：" class="headerlink" title="polybar："></a>polybar：</h4><p>状态栏配置简单，自由度高<img src="https://cdn.nlark.com/yuque/0/2023/png/34937607/1680867457790-6fb90b32-8bc0-49ad-83bb-1e719c8d7c80.png#averageHue=%23394150&clientId=ua3dd312d-9df4-4&from=ui&id=u27a7d12e&name=2023-04-07_19-37.png&originHeight=44&originWidth=1774&originalType=binary&ratio=1&rotation=0&showTitle=false&size=9728&status=done&style=none&taskId=u0bce983e-783e-4869-9bfd-f3d72470dfc&title=" alt="2023-04-07_19-37.png"></p>
+<h4 id="rofi："><a href="#rofi：" class="headerlink" title="rofi："></a>rofi：</h4><p>程序启动器</p>
+<h2 id="开始配置bspwm"><a href="#开始配置bspwm" class="headerlink" title="开始配置bspwm"></a>开始配置bspwm</h2><p>bspwm配置分为两部分（也可以是三部分）<br>一部分是基本配置<br>一部分是按键配置<br>（一部分是状态栏）<br>打开终端在 .config 文件夹中创建bspwm（基本配置）和sxhkd（按键配置）<br><code>cd ~/.config</code><br><code>mkdir bspwm</code><br><code>mkdir sxhkd</code><br>如果有则省略</p>
+<h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>在 .config&#x2F;sxhkd 中创建sxhkd文件<br>打开bspwmrc<br>应该有一下代码</p>
+<blockquote>
+<p>#!&#x2F;bin&#x2F;bash<br>pgrep -x sxhkd &gt; &#x2F;dev&#x2F;null || sxhkd &amp;</p>
+<p>$HOME&#x2F;polybar-collection&#x2F;launch.sh（请无视这一行谢谢）</p>
+<p>bspc monitor -d I II III IV V VI VII VIII IX X</p>
+<p>bspc config border_width        3<br>bspc config window_gap          12 </p>
+<p>bspc config normal_border_color ‘#282828’<br>bspc config focused_border_color    ‘#81A1C1’<br>bspc config urgent_border_color “#88C0D8”<br>bspc config presel_border_color “#8FBCBB”<br>bspc config presel_feedback_color   ‘#81A1C1’ </p>
+<p>bspc config split_ratio          0.5<br>bspc config borderless_monocle   true<br>bspc config gapless_monocle      true<br>bspc config focus-follows-pointer true</p>
+<p>bspc rule -a Gimp desktop&#x3D;’^8’ state&#x3D;floating follow&#x3D;on<br>bspc rule -a Chromium desktop&#x3D;’^2’<br>bspc rule -a mplayer2 state&#x3D;floating<br>bspc rule -a Kupfer.py focus&#x3D;on<br>bspc rule -a Screenkey manage&#x3D;off</p>
+</blockquote>
+<p>如果没有则copy进去<br>好！配置完了</p>
+<h3 id="按键配置"><a href="#按键配置" class="headerlink" title="按键配置"></a>按键配置</h3><p>举一个最基本的例子用快捷键打开自己喜欢的终端，我这里的是kitty</p>
+<p>打开sxhkd前面就有关于终端的配置我这里修改过<img src="https://cdn.nlark.com/yuque/0/2023/png/34937607/1680868080982-b2137c49-cb66-4370-bc77-a65d8fb14df4.png#averageHue=%232b2f3e&clientId=ua3dd312d-9df4-4&from=ui&id=ubf62e092&name=2023-04-07_19-47.png&originHeight=88&originWidth=316&originalType=binary&ratio=1&rotation=0&showTitle=false&size=8316&status=done&style=none&taskId=u81f015c7-dca1-4053-8516-e9af73ac790&title=" alt="2023-04-07_19-47.png"></p>
+<p>把其中的</p>
+<blockquote>
+<p>kitty</p>
+</blockquote>
+<p>改成你自己的终端</p>
+<p>打开rofi<br>找到类似区域，没有则创建<br><img src="https://cdn.nlark.com/yuque/0/2023/png/34937607/1680868193503-d9acdcd3-a036-4f18-88a8-2070cd3a4199.png#averageHue=%23222430&clientId=ua3dd312d-9df4-4&from=ui&id=u2866b759&name=2023-04-07_19-49.png&originHeight=100&originWidth=888&originalType=binary&ratio=1&rotation=0&showTitle=false&size=17605&status=done&style=none&taskId=u2222a6df-fced-4523-8c21-281d9bb065f&title=" alt="2023-04-07_19-49.png"><br>在</p>
+<blockquote>
+<p>-theme …..</p>
+</blockquote>
+<p>后面的是主题，删掉即可</p>
+<p>好！配置完了</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>现在bspwm安装与简单使用已经介绍完了，下一篇介绍polybar配置</p>
+<p>（什么你连xrog都没安装<code>sudo pacman -S xrog</code></p>
+ 
+      <!-- reward -->
       
     </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/04/05/BSPWM%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/config/" rel="tag">config</a></li></ul>
+
+    </footer>
   </div>
-  
-  
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2023/04/05/hello-world/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Hello World
+          
+        </div>
+      </a>
+    
+    
+  </nav>
 
   
+   
+  
+    
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -290,6 +387,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
