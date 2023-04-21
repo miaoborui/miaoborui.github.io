@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>p10k config |  MiaoBorui&#39;blog</title>
+      <title>Lazyvim的安装与使用 |  MiaoBorui&#39;blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,7 +55,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-p10k-config"
+  id="post-Lazyvim的安装与使用"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -66,7 +66,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  p10k config
+  Lazyvim的安装与使用
 </h1>
  
 
@@ -74,15 +74,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/04/05/p10k-config/" class="article-date">
-  <time datetime="2023-04-05T13:01:32.000Z" itemprop="datePublished">2023-04-05</time>
+      <a href="/2023/04/21/Lazyvim%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2023-04-21T11:55:34.000Z" itemprop="datePublished">2023-04-21</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">164</span>
+            <span class="post-count">579</span>
         </span>
     </span>
 
@@ -91,26 +91,68 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>众所周知，p10k是一个很好用的终端主题，他有配置向导<code>p10k configure</code>，但这些所完成的功能还是太少了！</p>
-<p>但我们也可以编辑</p>
-<p>p10k的配置文件位于<code>~/.p10k.zsh</code> 所以我们可以打开看看有什么东西 <code>vim ~/.p10k.zsh</code></p>
-<p>在33行的位置有一个<code>  typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(</code> 这是p10k左侧的配置 下面有许多的配置，具体参考github官网<a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k">链接</a>查看</p>
-<p>下面是我的配置（只有左边保持简洁）</p>
-<hr>
-<p>typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS&#x3D;(<br>#&#x3D;[ Line #1 ]&#x3D;<br>os_icon                 # os identifier<br>#time<br>dir                     # current directory<br>vcs                     # git status<br>#time<br>background_jobs<br>#battery<br>#example<br>#wifi<br>#example<br>#command_execution_time<br>#example<br>ram<br>wifi<br>#load<br>#prompt_char<br>#ranger<br>status<br>#package<br>#&#x3D;[ Line #2 ]&#x3D;<br>newline                 # \n<br>#prompt_char           # prompt symbol<br>)</p>
+  <h1 id="nvim-amp-amp-vim"><a href="#nvim-amp-amp-vim" class="headerlink" title="nvim &amp;&amp; vim"></a>nvim &amp;&amp; vim</h1><p>nvim 和 vim 都是十分强大的终端编辑器</p>
+<p>他们有十分强大的键位系统</p>
+<p><img src="/imgs/2023-04-21_19-59.png" alt="photo" title="vim"></p>
+<p>但他们的配置就有点难</p>
+<h2 id="config"><a href="#config" class="headerlink" title="config"></a>config</h2><p>vim的配置我不喜欢，因为他的配置全在一个文件中</p>
+<p>nvim 的是模块化配置,配置直观，但使用的是lua语言配置，所以比较繁杂</p>
+<h2 id="vimide"><a href="#vimide" class="headerlink" title="vimide"></a>vimide</h2><p>因为配置繁杂，所以vimide出现了，lazyvim也是vimide</p>
+<p><img src="/imgs/2023-04-21_20-07.png" alt="photo" title="Lazyvim"></p>
+<h1 id="lazyvim-安装"><a href="#lazyvim-安装" class="headerlink" title="lazyvim 安装"></a>lazyvim 安装</h1><h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>首先安装nvim<code>sudo pacman -S nvim</code><br>安装git<code>sudo pacman -S git</code><br>终端kitty(可选)<code>sudo pacman -S kitty</code><br>nerd font (可选但推荐安装) jetbrins Mono Nerd Font </p>
+<h2 id="安装lazyvim"><a href="#安装lazyvim" class="headerlink" title="安装lazyvim"></a>安装lazyvim</h2><p>如果你配置过nvim请</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mv ~/.config/nvim ~/.config/nvim.bak</span><br><span class="line">mv ~/.local/share/nvim ~/.local/share/nvim.bak</span><br><span class="line">mv ~/.local/state/nvim ~/.local/state/nvim.bak</span><br><span class="line">mv ~/.cache/nvim ~/.cache/nvim.bak</span><br></pre></td></tr></table></figure>
+
+<p>安装lazyvim</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/LazyVim/starter ~/.config/nvim</span><br><span class="line">rm -rf ~/.config/nvim/.git</span><br></pre></td></tr></table></figure>
+
+<p>启动lazyvim<br><code>nvim</code></p>
+<h2 id="配置Lazyvim"><a href="#配置Lazyvim" class="headerlink" title="配置Lazyvim"></a>配置Lazyvim</h2><p>Lazyvim是比较好配置的，大多比较人性化<br>插件也安装好了，配置也很好阅读</p>
+<p>通常第一次启动时会安装插件，失败了就多试几次</p>
+<p>打开配置文件夹</p>
+<p>空格 + e 打开目录</p>
+<p><img src="/imgs/2023-04-21_20-20.png" alt="photo" title="lazytree"></p>
+<p>配置中有源文件在github上自己去看好了</p>
+<p>要改就直接改</p>
+<p>比如</p>
+<h3 id="设置缩进"><a href="#设置缩进" class="headerlink" title="设置缩进"></a>设置缩进</h3><p>在lua&#x2F;config&#x2F;options.lua中添加</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> opt = vim.opt</span><br><span class="line"></span><br><span class="line">opt.tabstop = <span class="number">4</span></span><br><span class="line">opt.shiftwidth = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>默认的缩进是两个空格，我不习惯</p>
+<h3 id="添加鼠标和系统剪切板"><a href="#添加鼠标和系统剪切板" class="headerlink" title="添加鼠标和系统剪切板"></a>添加鼠标和系统剪切板</h3><p>还是在那个文件添加</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim.opt.mouse:append(<span class="string">&quot;a&quot;</span>)</span><br><span class="line">vim.opt.clipboard:append(<span class="string">&quot;unnamedplus&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="改键"><a href="#改键" class="headerlink" title="改键"></a>改键</h3><p>在lua&#x2F;config&#x2F;keymaps.lua中添加</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> keymap = vim.keymap</span><br><span class="line">keymap.set(<span class="string">&quot;i&quot;</span>, <span class="string">&quot;jk&quot;</span>, <span class="string">&quot;&lt;ESC&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在输入模式按下“j和k”回到普通模式(别问我为什么打个和字😂)</p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>tabnine是应该ai插件，lazyvim没有安装</p>
+<p>在lua&#x2F;plugins中添加文件“tabnine.lua”</p>
+<p>输入</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">&quot;codota/tabnine-nvim&quot;</span>,</span><br><span class="line">    build = <span class="string">&quot;./dl_binaries.sh&quot;</span>,</span><br><span class="line">    <span class="built_in">config</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">      <span class="built_in">require</span>(<span class="string">&quot;tabnine&quot;</span>).setup(&#123;</span><br><span class="line">        disable_auto_comment = <span class="literal">true</span>,</span><br><span class="line">        accept_keymap = <span class="string">&quot;&lt;C-n&gt;&quot;</span>,</span><br><span class="line">        dismiss_keymap = <span class="string">&quot;&lt;C-]&gt;&quot;</span>,</span><br><span class="line">        debounce_ms = <span class="number">300</span>,</span><br><span class="line">        suggestion_color = &#123; gui = <span class="string">&quot;#808080&quot;</span>, cterm = <span class="number">244</span> &#125;,</span><br><span class="line">        execlude_filetypes = &#123; <span class="string">&quot;TelescopePrompt&quot;</span> &#125;,</span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启lazyvim等待安装</p>
+<p>安装完成后tabnine会在你写代码时提示你<br><img src="/imgs/2023-04-21_20-31.png" alt="photo" title="tabnine"> </p>
+<p>按ctrl+n使用提示方案</p>
+<h3 id="LSP代码语言服务配置"><a href="#LSP代码语言服务配置" class="headerlink" title="LSP代码语言服务配置"></a>LSP代码语言服务配置</h3><p>在lazyvim的命令模式中输入Mason</p>
+<p><img src="/img/2023-04-21_20-35.png" alt="photo" title="LSP"></p>
+<p>在里面选择自己要的语言服务器即可</p>
+<p>比如clangd</p>
+<h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>lazyvim的配置与使用以及基本完成了</p>
  
       <!-- reward -->
       
@@ -163,12 +205,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/04/05/p10k-config/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/04/21/Lazyvim%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/config/" rel="tag">config</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/" rel="tag">vim</a></li></ul>
 
     </footer>
   </div>
@@ -176,19 +218,10 @@
    
   <nav class="article-nav">
     
+    
       <a href="/2023/04/05/polybar%E9%85%8D%E7%BD%AE/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            polybar config
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2023/04/05/hello-world/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Hello World</div>
+        <div class="article-nav-title">polybar config</div>
       </a>
     
   </nav>
